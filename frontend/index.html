@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagine AI - Image Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Imagine AI</div>
+        <div class="nav-links">
+            <a href="#hero">Home</a>
+            <a href="#generator">Create</a>
+            <a href="#results">Gallery</a>
+        </div>
+        <button class="nav-btn">Get Started</button>
+    </nav>
+    <main>
+        <section class="hero" id="hero">
+            <span class="hero-tag">AI POWERED IMAGE CREATION</span>
+              <h1 class="hero_h1">
+                Imagine it. Create it.
+                <span class="hero_span">Bring your ideas to life.</span>
+              </h1>
+              <p class="hero_p">
+                Turn your imagination into stunning visuals with the power of AI. Just describe what you want to see. 
+              </p>
+              <button class="hero_btn">Start Creating</button>
+        </section>
+
+
+        
+        <section class="generator" id="generator">
+            <div class="gen_head">
+                <span class="gen_span">AI IMAGE GENERATOR</span>
+                <h2>Create your imagination</h2>
+                <p>Describe your dream image and let AI bring it to life.</p>
+            </div>
+            <div class="gen_box">
+                <textarea  placeholder="Describe the image you want to create..." 
+                rows="7" class="prompt-input" maxlength="500"></textarea>
+                <div class="gen-settings-row">
+
+                    <!-- Aspect Ratio -->
+
+                    <div class="gen_setting">
+
+                        <label for="imageSize">Aspect Ratio</label>
+
+                        <select id="imageSize">
+
+                            <option value="1:1">Square (1:1)</option>
+                            <option value="2:3">Portrait (2:3)</option>
+                            <option value="3:2">Landscape (3:2)</option>
+                            <option value="16:9">Widescreen (16:9)</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Number Of Images -->
+
+                    <div class="setting-group">
+
+                        <label for="imageCount">Number Of Images</label>
+
+                        <select id="imageCount">
+
+                            <option value="1">1 Image</option>
+                            <option value="2">2 Images</option>
+                            <option value="3">3 Images</option>
+                            <option value="4">4 Images</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Image Quality -->
+
+                    <div class="setting-group">
+
+                        <label for="imageQuality">Image Quality</label>
+
+                        <select id="imageQuality">
+
+                            <option value="standard">Standard</option>
+                            <option value="high">High (HD)</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <!-- Generate Action -->
+
+                <div class="gen_action">
+
+                    <span class="prompt-count">0 / 500 characters</span>
+
+                    <button class="generate-btn">
+                        Generate Image ✨
+                    </button>
+
+                </div>
+             </div>
+
+
+        </section>
+        <section class="results" id="results"></section>
+    </main>
+</body>
+</html>
