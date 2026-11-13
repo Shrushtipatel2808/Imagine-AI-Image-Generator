@@ -1,309 +1,854 @@
+
+/* =====================================
+   1. GLOBAL RESET
+===================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Page Background */
-body {
-    background: #f6f7fc;
-    font-family: Arial, sans-serif;
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
-/* Navbar */
+body {
+    background: #f7f7fc;
+    font-family: Arial, sans-serif;
+    color: #292641;
+    line-height: 1.5;
+}
+
+button, select, textarea {
+    font: inherit;
+}
+
+
+/* =====================================
+   2. NAVBAR
+===================================== */
+
 .navbar {
-    width: 90%;
-    max-width: 1100px;
-    margin: 30px auto;
+    width: 94%;
+    max-width: 1400px;
+    min-height: 68px;
+    margin: 18px auto;
+    padding: 12px 22px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 
-    padding: 16px 24px;
-    background: #ffffff;
-    border: 1px solid #e8eaf2;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid #e9e7f3;
     border-radius: 16px;
+
+    position: sticky;
+    top: 12px;
+    z-index: 100;
+
+    backdrop-filter: blur(15px);
+    box-shadow: 0 5px 25px rgba(50, 40, 100, 0.05);
 }
 
-/* Logo */
 .logo {
-    font-size: 24px;
-    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
     color: #6258db;
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: 700;
+    white-space: nowrap;
 }
 
-/* Navigation Links */
+.logo span {
+    font-size: 25px;
+}
+
 .nav-links {
     display: flex;
-    gap: 28px;
+    align-items: center;
+    gap: 32px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #44445a;
-    font-size: 16px;
+    color: #66647a;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
-/* Button */
+.nav-links a:hover {
+    color: #6258db;
+}
+
 .nav-btn {
     background: #6258db;
     color: white;
-    font-size: 18px;
-    border: none;
-    padding: 15px 15px;
-    border-radius: 10px;
-    cursor: pointer;
+    text-decoration: none;
+    padding: 11px 17px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
 }
-.hero{
-    text-align: center;
-    margin: 50px auto 0;
-    padding: 20px;
+
+.nav-btn:hover {
+    background: #4940c9;
 }
-.hero-tag{
+
+
+/* =====================================
+   3. HERO SECTION
+===================================== */
+
+.hero {
+    width: 94%;
+    max-width: 1400px;
+    margin: 35px auto 0;
+    padding: 40px 48px;
+
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 40px;
+
+    background: linear-gradient(115deg, #ffffff, #f0edff);
+    border: 1px solid #e9e6fa;
+    border-radius: 25px;
+
+    box-shadow: 0 12px 35px rgba(80, 70, 150, 0.05);
+}
+
+.hero-content {
+    min-width: 0;
+}
+
+.hero-tag, .section-tag {
+    display: inline-block;
+    padding: 8px 13px;
+    border-radius: 30px;
     background: #eeecff;
     color: #6258db;
-    border-radius: 30px;
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 11px;
+    font-weight: 700;
     letter-spacing: 1px;
-    display: inline-block;
-    padding: 10px;
-    margin-top: 15px;
 }
-.hero_h1{
-    font-size: 50px;
-    color: #25233d;
-    margin-top: 24px;
+
+.hero-content h1 {
+    margin-top: 20px;
+    font-size: clamp(35px, 4vw, 49px);
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    color: #292641;
 }
-.hero_span{
-    display:block;
+
+.hero-content h1 span {
+    display: block;
     color: #6258db;
+    margin-top: 5px;
 }
-.hero_p{
-    font-size: 18px;
-    color: #68677d;
-    margin: 20px auto;
+
+.hero-content > p {
+    max-width: 480px;
+    margin: 18px 0 22px;
+    color: #77758a;
+    font-size: 15px;
+    line-height: 1.8;
 }
-.hero_btn{
-    background: #6258db;
-    color: white;
-    border  : none;
-    padding: 15px 25px;
+
+.hero-btn {
+    display: inline-block;
+    padding: 13px 21px;
     border-radius: 10px;
-    font-size: 18px;
-    font-weight:600;
-
+    background: linear-gradient(135deg, #6258db, #8b5cf6);
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-/* =================================
-   GENERATOR SECTION
-================================= */
+.hero-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(98, 88, 219, 0.2);
+}
+
+.hero-note {
+    margin-top: 22px;
+    color: #8a879b;
+    font-size: 12px;
+}
+
+
+/* =====================================
+   4. HERO VISUAL
+===================================== */
+
+.hero-visual {
+    min-height: 270px;
+    padding: 22px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid rgba(255,255,255,0.9);
+    border-radius: 21px;
+
+    background: linear-gradient(145deg, #e6e1ff, #f8eaff, #e3efff);
+    overflow: hidden;
+}
+
+.visual-top {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #79719e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.visual-dot {
+    width: 8px;
+    height: 8px;
+    background: #8c79e9;
+    border-radius: 50%;
+}
+
+.visual-art {
+    position: relative;
+    width: 135px;
+    height: 115px;
+    margin: 12px 0;
+    display: grid;
+    place-items: center;
+}
+
+.art-center {
+    width: 75px;
+    height: 75px;
+    display: grid;
+    place-items: center;
+    border-radius: 23px;
+    background: linear-gradient(135deg, #7765e8, #b39aff);
+    color: white;
+    font-size: 40px;
+    box-shadow: 0 12px 35px rgba(98, 88, 219, 0.25);
+    z-index: 2;
+}
+
+.art-orbit {
+    position: absolute;
+    border: 1px solid rgba(98, 88, 219, 0.25);
+    border-radius: 50%;
+}
+
+.orbit-one {
+    width: 110px;
+    height: 110px;
+}
+
+.orbit-two {
+    width: 135px;
+    height: 85px;
+    transform: rotate(-35deg);
+}
+
+.art-star {
+    position: absolute;
+    color: #8876e9;
+    font-size: 22px;
+}
+
+.star-one {
+    top: 0;
+    right: 2px;
+}
+
+.star-two {
+    bottom: 0;
+    left: 0;
+}
+
+.hero-visual h3 {
+    color: #37315f;
+    font-size: 21px;
+}
+
+.hero-visual > p {
+    margin-top: 5px;
+    color: #77718f;
+    font-size: 13px;
+}
+
+.visual-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 16px;
+}
+
+.visual-tags span {
+    padding: 6px 10px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.75);
+    color: #6258db;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+/* =====================================
+   5. SIDE-BY-SIDE WORKSPACE
+===================================== */
+
+.workspace {
+    width: 94%;
+    max-width: 1400px;
+    margin: 48px auto 70px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    align-items: start;
+    gap: 28px;
+}
+
+
+/* =====================================
+   6. GENERATOR SECTION
+===================================== */
 
 .generator {
-    width: 90%;
-    max-width: 1000px;
-    margin: 90px auto 0;
-    padding: 20px;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    min-width: 0;
 }
 
-/* Generator Heading */
-
-.gen_head {
+.section-heading {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 22px;
 }
 
-.gen_span {
-    display: inline-block;
-    color: #6258db;
-    background: #eeecff;
-    padding: 10px 16px;
-    border-radius: 20px;
-    font-weight: 600;
-    letter-spacing: 1px;
+.section-heading h2, .gallery-heading h2 {
+    margin-top: 12px;
+    color: #292641;
+    font-size: 27px;
+    letter-spacing: -0.5px;
+}
+
+.section-heading p, .gallery-heading p {
+    margin-top: 6px;
+    color: #858398;
+    font-size: 13px;
+}
+
+
+/* =====================================
+   7. GENERATOR CARD
+===================================== */
+
+.gen-box {
+    padding: 24px;
+    background: white;
+    border: 1px solid #e8e6f0;
+    border-radius: 21px;
+    box-shadow: 0 12px 40px rgba(80, 70, 150, 0.07);
+}
+
+.prompt-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    gap: 10px;
+}
+
+.prompt-heading label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #34324d;
+}
+
+.prompt-heading span {
+    color: #9692aa;
     font-size: 12px;
 }
 
-.gen_head h2 {
-    font-size: 35px;
-    color: #25233d;
-    margin: 15px 0 12px;
-}
 
-.gen_head p {
-    font-size: 15px;
-    color: #68677d;
-    line-height: 1.6;
-}
-
-
-/* =================================
-   GENERATOR CARD
-================================= */
-
-.gen_box {
-    width: 100%;
-    background: #ffffff;
-    border: 1px solid #e8e6f0;
-    border-radius: 22px;
-    padding: 28px;
-    box-shadow: 0 12px 40px rgba(80, 70, 150, 0.08);
-}
-
-
-/* =================================
-   PROMPT TEXTAREA
-================================= */
+/* =====================================
+   8. PROMPT TEXTAREA
+===================================== */
 
 .prompt-input {
     display: block;
     width: 100%;
-    min-height: 140px;
-    padding: 18px;
+    min-height: 125px;
+    padding: 15px;
 
     border: 1px solid #e5e3ef;
-    border-radius: 13px;
-
-    font-size: 15px;
-    font-family: inherit;
-    outline: none;
+    border-radius: 12px;
 
     background: #fdfcff;
-    color: #25233d;
+    color: #292641;
+
+    font-size: 14px;
+    font-family: inherit;
+    line-height: 1.7;
+
+    outline: none;
+    resize: vertical;
+    transition: 0.3s;
 }
 
 .prompt-input:focus {
-    border-color: #6258db;
-    box-shadow: 0 0 0 4px rgba(98, 88, 219, 0.12);
+    border-color: #8b7cf0;
+    box-shadow: 0 0 0 4px rgba(98, 88, 219, 0.09);
+}
+
+.prompt-input::placeholder {
+    color: #aaa7b8;
 }
 
 
-/* =================================
-   THREE SETTINGS - ONE ROW
-================================= */
+/* =====================================
+   9. PROMPT SUGGESTIONS
+===================================== */
 
-.gen-settings-row {
+.prompt-tools {
+    margin-top: 16px;
+}
+
+.suggestion-heading {
+    margin-bottom: 9px;
+    color: #858398;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.prompt-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.suggestion-btn {
+    padding: 8px 11px;
+    border: 1px solid #e8e5f4;
+    border-radius: 25px;
+    background: #faf9ff;
+    color: #6258db;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.suggestion-btn:hover {
+    background: #eeecff;
+    border-color: #b8aef5;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================
+   10. PROMPT ACTIONS
+===================================== */
+
+.prompt-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 9px;
+    margin-top: 14px;
+}
+
+.prompt-actions button {
+    padding: 8px 11px;
+    border: 1px solid #e7e4f0;
+    border-radius: 8px;
+    background: white;
+    color: #6258db;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.prompt-actions button:hover {
+    background: #f0edff;
+}
+
+
+/* =====================================
+   11. SETTINGS
+===================================== */
+
+.settings-row {
     display: grid;
-    grid-template-columns:1fr 1fr 1fr;
-    gap: 20px;
-    margin-top: 25px;
-    padding-top: 22px;
-    border-top: 1px solid #eeeaf7;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid #efedf5;
 }
 
-
-/* Individual Setting */
-
-.gen_setting,
 .setting-group {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     min-width: 0;
 }
 
-
-/* Setting Labels */
-
-.gen_setting label,
 .setting-group label {
-    font-size: 14px;
-    font-weight: 600;
-    color: #34324d;
+    color: #39364f;
+    font-size: 11px;
+    font-weight: 700;
 }
 
-
-/* Dropdown Design */
-
-.gen_setting select,
 .setting-group select {
     width: 100%;
     min-width: 0;
-    padding: 15px;
-    border: 1px solid #e5e3ef;
-    border-radius: 10px;
+    padding: 11px 8px;
+    border: 1px solid #e6e3f0;
+    border-radius: 9px;
     background: #faf9ff;
-    color: #414d32;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
+    color: #55516d;
+    font-size: 11px;
     outline: none;
+    cursor: pointer;
 }
 
-.gen_setting select:focus,
 .setting-group select:focus {
-    border-color: #6258db;
-    box-shadow: 0 0 0 3px rgba(98, 88, 219, 0.12);
+    border-color: #8b7cf0;
+    box-shadow: 0 0 0 3px rgba(98, 88, 219, 0.08);
 }
 
 
-/* =================================
-   GENERATE ACTION
-================================= */
+/* =====================================
+   12. GENERATE ACTION
+===================================== */
 
-.gen_action {
+.generate-action {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 25px;
+    gap: 12px;
+    margin-top: 22px;
 }
 
 .prompt-count {
-    font-size: 13px;
     color: #858398;
+    font-size: 11px;
 }
 
 .generate-btn {
+    padding: 12px 17px;
+    border: none;
+    border-radius: 10px;
     background: linear-gradient(135deg, #6258db, #8b5cf6);
     color: white;
-    border: none;
-    padding: 14px 25px;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 700;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-/* =================================
-   RESULTS SECTION
-================================= */
+.generate-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(98, 88, 219, 0.2);
+}
 
-.results {
-    width: 90%;
-    max-width: 1100px;
-    margin: 80px auto;
+.generate-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.service-note {
+    margin-top: 13px;
+    color: #a09daf;
+    font-size: 10px;
+    text-align: center;
 }
 
 
-/* =================================
-   RESPONSIVE DESIGN
-================================= */
+/* =====================================
+   13. GALLERY SECTION
+===================================== */
+
+.gallery-section {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    margin: 0;
+    scroll-margin-top: 100px;
+}
+
+.gallery-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.gallery-heading h2 {
+    font-size: 27px;
+}
+
+.gallery-heading p {
+    font-size: 12px;
+}
+
+.gallery-count {
+    padding: 8px 11px;
+    border: 1px solid #e8e5f3;
+    border-radius: 20px;
+    background: white;
+    color: #6258db;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+
+/* =====================================
+   14. GALLERY GRID
+===================================== */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    align-items: start;
+}
+
+.image-card {
+    min-width: 0;
+    padding: 11px;
+    border: 1px solid #e8e6f0;
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 8px 25px rgba(80, 70, 150, 0.06);
+    transition: 0.3s;
+}
+
+.image-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(80, 70, 150, 0.12);
+}
+
+.generated-image {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    background: #f5f4fa;
+    border-radius: 10px;
+}
+
+.download-btn {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 11px;
+    border: none;
+    border-radius: 9px;
+    background: linear-gradient(135deg, #6258db, #8b5cf6);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.download-btn:hover:not(:disabled) {
+    background: #4940c9;
+}
+
+.download-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* =====================================
+   15. EMPTY GALLERY
+===================================== */
+
+.empty-gallery {
+    padding: 55px 15px;
+    text-align: center;
+    border: 1px dashed #dcd7ed;
+    border-radius: 17px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.empty-icon {
+    color: #8c7be7;
+    font-size: 38px;
+}
+
+.empty-gallery h3 {
+    margin-top: 10px;
+    color: #45415f;
+    font-size: 17px;
+}
+
+.empty-gallery p {
+    margin-top: 6px;
+    color: #9591a6;
+    font-size: 12px;
+}
+
+.empty-gallery.hidden {
+    display: none;
+}
+
+
+/* =====================================
+   16. FOOTER
+===================================== */
+
+.footer {
+    width: 94%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 25px 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    border-top: 1px solid #e9e6f0;
+}
+
+.footer-logo {
+    color: #6258db;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.footer p {
+    color: #9995a9;
+    font-size: 11px;
+}
+
+
+/* =====================================
+   17. TABLET LAYOUT
+===================================== */
+
+@media (max-width: 950px) {
+
+    .workspace {
+        grid-template-columns: 1fr;
+        max-width: 750px;
+        gap: 45px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .generated-image {
+        height: 260px;
+    }
+
+}
+
+
+/* =====================================
+   18. MOBILE LAYOUT
+===================================== */
 
 @media (max-width: 650px) {
 
-    .generator {
-        width: 95%;
-        margin-top: 60px;
-        padding: 10px;
+    .navbar {
+        width: 94%;
+        padding: 12px 14px;
+        flex-wrap: wrap;
+        gap: 12px;
+        position: relative;
+        top: auto;
     }
 
-    .gen_box {
-        padding: 20px;
+    .logo {
+        font-size: 18px;
     }
 
-    /* Mobile: settings vertically */
+    .nav-btn {
+        padding: 9px 11px;
+        font-size: 11px;
+    }
 
-    .gen-settings-row {
+    .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .hero {
+        width: 94%;
+        margin-top: 25px;
+        padding: 25px 19px;
         grid-template-columns: 1fr;
-        gap: 18px;
+        text-align: center;
+        gap: 25px;
     }
 
-    .gen_head h2 {
-        font-size: 28px;
+    .hero-content h1 {
+        font-size: 35px;
     }
 
-    .gen_action {
+    .hero-content > p {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 14px;
+    }
+
+    .hero-visual {
+        min-height: 235px;
+    }
+
+    .workspace {
+        width: 94%;
+        margin-top: 35px;
+        gap: 40px;
+    }
+
+    .section-heading h2,
+    .gallery-heading h2 {
+        font-size: 24px;
+    }
+
+    .gen-box {
+        padding: 18px;
+    }
+
+    .settings-row {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .generate-action {
         flex-direction: column;
         align-items: stretch;
     }
@@ -311,4 +856,56 @@ body {
     .generate-btn {
         width: 100%;
     }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .generated-image {
+        height: 190px;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+
+/* =====================================
+   19. SMALL MOBILE
+===================================== */
+
+@media (max-width: 420px) {
+
+    .hero-content h1 {
+        font-size: 29px;
+    }
+
+    .nav-links {
+        gap: 17px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .generated-image {
+        height: 250px;
+    }
+
+    .prompt-suggestions {
+        gap: 7px;
+    }
+
+    .suggestion-btn {
+        font-size: 10px;
+        padding: 8px 9px;
+    }
+
 }
